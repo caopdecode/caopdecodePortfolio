@@ -5,6 +5,18 @@ import './App.css'
 import Switch, { switchClasses } from '@mui/joy/Switch';
 import Typography from '@mui/joy/Typography';
 import SWEPic from './IMGs/SWEPic.jpg';
+import AdobeIll from './IMGs/ADOBEILLLogo.png';
+import AdobePh from './IMGs/ADOBEPHLogo.png';
+import AdobePr from './IMGs/ADOBEPRLogo.png';
+import CapCut from './IMGs/CAPCUTLogo.png';
+import Js from './IMGs/JSLogo.png';
+import Htmll from './IMGs/HTMLLogo.png';
+import Css from './IMGs/CSSLogo.png';
+import ReactL from './IMGs/REACTLogo.png';
+import Java from './IMGs/JAVALogo.png';
+import Python from './IMGs/PYTHONLogo.png';
+import Sql from './IMGs/SQLLogo.png';
+import Php from './IMGs/PHPLogo.png';
 
 const Header = styled.div`
   display: flex;
@@ -155,7 +167,7 @@ const SkillsSec = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
+  width: 100%;
   height: 50%;
   margin: 20px 0px;
 `;
@@ -165,10 +177,22 @@ const SkillsDivider = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 100%;
   height: 95%;
 `;
 
+const SkillImg = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-image: url(${(props) => props.$bg});
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+`;
 
 
 function App() {
@@ -200,6 +224,20 @@ function App() {
     setAbout(false);
     setSkills(false);
   }
+
+  const skillsArr = [
+    { id: 1, img: `${Java}` },
+    { id: 2, img: `${Python}` },
+    { id: 3, img: `${Sql}` },
+    { id: 4, img: `${Php}` }
+  ];
+
+  const skillsArr2 = [
+    { id: 1, img: `${Htmll}` },
+    { id: 2, img: `${Css}` },
+    { id: 3, img: `${Js}` },
+    { id: 4, img: `${ReactL}` }
+  ];
 
   return (
     <>
@@ -277,32 +315,18 @@ function App() {
             <>
             <SkillsDivider>
               <SkillsSec>
-              <SkillCard>
-
-              </SkillCard>
-              <SkillCard>
-                
-              </SkillCard>
-              <SkillCard>
-                
-              </SkillCard>
-              <SkillCard>
-                
-              </SkillCard>
+               {skillsArr.map((skill) => (
+                    <SkillCard key={skill.id}>
+                    <SkillImg $bg={skill.img} />
+                  </SkillCard>
+                ))}
               </SkillsSec>
               <SkillsSec>
-              <SkillCard>
-                
-              </SkillCard>
-              <SkillCard>
-                
-              </SkillCard>
-              <SkillCard>
-                
-              </SkillCard>
-              <SkillCard>
-                
-              </SkillCard>
+                {skillsArr2.map((skill) => (
+                    <SkillCard key={skill.id}>
+                    <SkillImg $bg={skill.img} />
+                  </SkillCard>
+                ))}
               </SkillsSec>
             </SkillsDivider>
             </>
