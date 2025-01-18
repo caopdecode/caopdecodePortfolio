@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import * as React from 'react';
+import * as motion from "motion/react-client"
 import styled from 'styled-components'
 import './App.css'
 import Switch, { switchClasses } from '@mui/joy/Switch';
@@ -424,6 +425,14 @@ function App() {
     { name: 'Designs', colorBg: 'wheat' }
   ];
 
+  const handleEmailIcon = () => {
+    const email = "caopdecode.contact@gmail.com";
+    const subject = "Let's Work";
+    const body = "Hi, I would like to know more about your profile ";
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+  };
+
   return (
     <>
       <Header>
@@ -471,11 +480,21 @@ function App() {
       <InfoBackgr>
       
         <CardsContainer>
+        <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            style={{width: '100%', height: '85%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', margin: '0px'}}
+            transition={{
+                duration: 0.8,
+                delay: 0.2,
+                ease: [0, 0.71, 0.2, 1.01],
+            }}
+            >
           <SectionsTitle>
             Sections
           </SectionsTitle>
           {!checked ?(
-            <>
+            <>  
               <Card onClick={handleAbout}>
                 <CardText>About</CardText>
               </Card>
@@ -488,6 +507,7 @@ function App() {
             </>
           ):(
             <>
+            
             <CardME onClick={handleAbout}>
               <MECardText>About</MECardText>
             </CardME>
@@ -499,6 +519,7 @@ function App() {
             </CardME>
           </>
           )}
+          </motion.div>
         </CardsContainer>
         {!checked ? (
         <InfoCont>
@@ -606,15 +627,15 @@ function App() {
         <FooterIconCont>
         {!checked?(
           <>
-          <FaInstagram className='SWEIcons'/>
-          <FaXTwitter className='SWEIcons'/>
-          <IoMail className='SWEIcons'/>
+          <FaInstagram className='SWEIcons' onClick={() => window.open('https://www.instagram.com/caopdecode', '_blank')}/>
+          <FaXTwitter className='SWEIcons' onClick={() => window.open('https://www.x.com/caopdecode', '_blank')}/>
+          <IoMail className='SWEIcons' onClick={handleEmailIcon}/>
           </>
         ):(
           <>
-          <FaInstagram className='MEIcons'/>
-          <FaXTwitter className='MEIcons'/>
-          <IoMail className='MEIcons'/>
+          <FaInstagram className='MEIcons' onClick={() => window.open('https://www.instagram.com/caopdecode', '_blank')}/>
+          <FaXTwitter className='MEIcons' onClick={() => window.open('https://www.x.com/caopdecode', '_blank')}/>
+          <IoMail className='MEIcons' onClick={handleEmailIcon}/>
           </>
         )}
         </FooterIconCont>
