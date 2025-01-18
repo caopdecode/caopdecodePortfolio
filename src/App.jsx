@@ -5,6 +5,7 @@ import './App.css'
 import Switch, { switchClasses } from '@mui/joy/Switch';
 import Typography from '@mui/joy/Typography';
 import SWEPic from './IMGs/SWEPic.jpg';
+import MEPic from './IMGs/MEPic.jpg';
 import AdobeIll from './IMGs/ADOBEILLLogo.png';
 import AdobePh from './IMGs/ADOBEPHLogo.png';
 import AdobePr from './IMGs/ADOBEPRLogo.png';
@@ -31,6 +32,10 @@ const LogoHeader = styled.h3`
   color: #63E6FA;
 `;
 
+const LogoHeaderME = styled.h3`
+  color: #FD76FD;
+`;
+
 const InfoBackgr = styled.div`
   display: flex;
   flex-direction: row;
@@ -50,6 +55,18 @@ const InfoCont = styled.div`
   justify-content: left;
   background: rgb(4,189,218);
   background: linear-gradient(152deg, rgba(4,189,218,1) 0%, rgba(99,230,250,1) 100%);
+  width: 75%;
+  height: 100%;
+  border-radius: 50px;
+`;
+
+const InfoContME = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  background: rgb(4,189,218);
+  background: linear-gradient(152deg, rgba(217,0,217,1) 0%, rgba(253,118,253,1) 100%);
   width: 75%;
   height: 100%;
   border-radius: 50px;
@@ -78,10 +95,29 @@ const Card = styled.button`
   height: 25%;
   margin: 10px;
   border-radius: 20px;
+  border: none;
   cursor: pointer;
   transition: 0.5s;
   &:hover{
     background-color: rgba(4,189,218,1);
+    transition: 0.5s;
+  }
+`;
+
+const CardME = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FD76FD;
+  width: 80%;
+  height: 25%;
+  margin: 10px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  &:hover{
+    background-color: #D900D9;
     transition: 0.5s;
   }
 `;
@@ -96,6 +132,20 @@ const SWETitle = styled.h1`
 
 const ProfileTitle = styled.h2`
   color: #171717;
+  font-style: italic;
+  margin: 0px;
+`;
+
+const METitle = styled.h1`
+  color: #F5F5F5;
+  font-size: 50px;
+  font-style: italic;
+  margin: 0px;
+  margin-top: 30px;
+`;
+
+const ProfileMETitle = styled.h2`
+  color: #F5F5F5;
   font-style: italic;
   margin: 0px;
 `;
@@ -133,6 +183,19 @@ const SWEPicCont = styled.div`
   border-radius: 25px;
 `;
 
+const MEPicCont = styled.div`
+  display: flex;
+  width: 48%;
+  height: 100%;
+  background-image: url(${MEPic});
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+`;
+
 const SWETextInfo = styled.p`
   text-align: justify;
   width: 90%;
@@ -142,6 +205,13 @@ const SWETextInfo = styled.p`
 
 const CardText = styled.h2`
   color: #171717;
+  font-size: 35px;
+  cursor: pointer;
+  font-weight: 300;
+`;
+
+const MECardText = styled.h2`
+  color: #F5F5F5;
   font-size: 35px;
   cursor: pointer;
   font-weight: 300;
@@ -169,7 +239,7 @@ const SkillsSec = styled.div`
   align-items: center;
   width: 100%;
   height: 50%;
-  margin: 20px 0px;
+  margin: 0px 0px;
 `;
 
 const SkillsDivider = styled.div`
@@ -194,6 +264,35 @@ const SkillImg = styled.div`
   border-radius: 20px;
 `;
 
+const ProjectsCont = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+`;
+
+const ProjectCard = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 90%;
+  background-color: #171717;
+  color: ${(props) => props.textColor || 'black'};
+  border-radius: 25px;
+  border: none;
+  transition: 0.5s;
+  &:hover{
+    background-color: ${(props) => props.$colorBg};
+    color: #F5F5F5;
+    translate: 0px -10px;
+    box-shadow: 0px 20px 10px 1px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+  }
+`;
+
+
 
 function App() {
 
@@ -211,19 +310,46 @@ function App() {
     setAbout(true);
     setSkills(false);
     setProjects(false);
-  }
+  };
 
   const handleSkills = () =>{
     setSkills(true);
     setAbout(false);
     setProjects(false);
-  }
+  };
 
   const handleProjects = () =>{
     setProjects(true);
     setAbout(false);
     setSkills(false);
-  }
+  };
+
+  const handleProjectsBtn = (projectName) =>{
+    if(projectName == 'XlComp'){
+      alert('XlComp Project');
+    }
+    else if(projectName == 'Project2'){
+      alert('Project in construction');
+    }
+    else if(projectName == 'Project3'){
+      alert('Project in construction');
+    }
+    else if(projectName == 'Project4'){
+      alert('Project in construction');
+    }
+    else if(projectName == 'LifeStyle Instagram'){
+      alert('LifeStyle IG Project');
+    }
+    else if(projectName == 'Youtube'){
+      alert('Youtube Project');
+    }
+    else if(projectName == 'Developer Instagram'){
+      alert('Developer IG Project');
+    }
+    else if(projectName == 'Designs'){
+      alert('Designs Project');
+    }
+  };
 
   const skillsArr = [
     { id: 1, img: `${Java}` },
@@ -239,10 +365,35 @@ function App() {
     { id: 4, img: `${ReactL}` }
   ];
 
+  const skillsMEArr = [
+    { id: 1, img: `${AdobePr}` },
+    { id: 2, img: `${AdobePh}` },
+    { id: 3, img: `${AdobeIll}` },
+    { id: 4, img: `${CapCut}` }
+  ];
+
+  const projectsArr = [
+    { name: 'XlComp', colorBg: 'green' },
+    { name: 'Project2', colorBg: 'darkgrey' },
+    { name: 'Project3', colorBg: 'darkgrey' },
+    { name: 'Project4', colorBg: 'darkgrey' }
+  ];
+
+  const MEprojectsArr = [
+    { name: 'LifeStyle Instagram', colorBg: 'orange' },
+    { name: 'Youtube', colorBg: 'darkred' },
+    { name: 'Developer Instagram', colorBg: '#63E6FA' },
+    { name: 'Designs', colorBg: 'wheat' }
+  ];
+
   return (
     <>
       <Header>
+        {!checked ? (
         <LogoHeader>CAOP_Decode</LogoHeader>
+      ):(
+        <LogoHeaderME>CAOP_Decode</LogoHeaderME>
+      )}
         <Switch
         onChange={handleToggleCheck}
         checked={checked}
@@ -280,20 +431,38 @@ function App() {
       />
       </Header>
       <InfoBackgr>
+      
         <CardsContainer>
           <SectionsTitle>
             Sections
           </SectionsTitle>
-          <Card onClick={handleAbout}>
-            <CardText>About</CardText>
-          </Card>
-          <Card onClick={handleSkills}>
-            <CardText>Skills</CardText>
-          </Card>
-          <Card onClick={handleProjects}>
-            <CardText>Projects</CardText>
-          </Card>
+          {!checked ?(
+            <>
+              <Card onClick={handleAbout}>
+                <CardText>About</CardText>
+              </Card>
+              <Card onClick={handleSkills}>
+                <CardText>Skills</CardText>
+              </Card>
+              <Card onClick={handleProjects}>
+                <CardText>Projects</CardText>
+              </Card>
+            </>
+          ):(
+            <>
+            <CardME onClick={handleAbout}>
+              <MECardText>About</MECardText>
+            </CardME>
+            <CardME onClick={handleSkills}>
+              <MECardText>Skills</MECardText>
+            </CardME>
+            <CardME onClick={handleProjects}>
+              <MECardText>Projects</MECardText>
+            </CardME>
+          </>
+          )}
         </CardsContainer>
+        {!checked ? (
         <InfoCont>
           <SWETitle>SOFTWARE ENGINEER</SWETitle>
           <ProfileTitle>Profile</ProfileTitle>
@@ -301,7 +470,6 @@ function App() {
           {about &&(
             <>
             <SWETextCont>
-              
               <SWETextInfo>
               As a passionate Software Engineer with 2-3 years of experience, I specialize in backend development, leveraging robust expertise in Java, SQL, Python, and PHP to deliver efficient and scalable solutions. My skills extend to frontend technologies, including HTML, CSS, JavaScript, and React.
               <br/><br/>
@@ -331,8 +499,63 @@ function App() {
             </SkillsDivider>
             </>
           )}
+          {projects &&(
+            <>
+              <ProjectsCont>
+              {projectsArr.map((project) => (
+                  <ProjectCard key={project.name} $colorBg={project.colorBg} textColor={'#63E6FA'} onClick={ () => handleProjectsBtn(project.name)}>
+                    <h2>{project.name}</h2>
+                  </ProjectCard>
+                ))}
+              </ProjectsCont>
+            </>
+          )}
           </SWEInfo>
         </InfoCont>
+        ):(
+          <InfoContME>
+          <METitle>MULTIMEDIA ENGINEER</METitle>
+          <ProfileMETitle>Profile</ProfileMETitle>
+          <SWEInfo>
+          {about &&(
+            <>
+            <SWETextCont>
+              <SWETextInfo>
+                As a Multimedia Engineer, I bring a wealth of creative experience in video production, short film creation, and photo and video editing. Proficient in Adobe Creative Suite and CapCut.
+                <br/><br/>
+                Skills in storytelling through video, meticulous attention to detail in editing, and a deep understanding of multimedia trends. As a strong communicator and team collaborator, I thrive in dynamic environments, meeting deadlines without compromising quality. With a passion for visual storytelling and a commitment to growth, I am dedicated to delivering projects that leave a lasting impact.
+              </SWETextInfo>
+            </SWETextCont>
+            <MEPicCont/>
+            </>
+          )}
+           {skills &&(
+            <>
+            <SkillsDivider>
+              <SkillsSec>
+               {skillsMEArr.map((skill) => (
+                    <SkillCard key={skill.id}>
+                    <SkillImg $bg={skill.img} />
+                  </SkillCard>
+                ))}
+              </SkillsSec>
+            </SkillsDivider>
+            </>
+          )}
+          {projects &&(
+            <>
+              <ProjectsCont>
+              {MEprojectsArr.map((project) => (
+                  <ProjectCard key={project.name} $colorBg={project.colorBg} textColor={'#FD76FD'} onClick={ () => handleProjectsBtn(project.name)}>
+                    <h2>{project.name}</h2>
+                  </ProjectCard>
+                ))}
+              </ProjectsCont>
+            </>
+          )}
+          </SWEInfo>
+        </InfoContME>
+        )}
       </InfoBackgr>
     </>
   )
