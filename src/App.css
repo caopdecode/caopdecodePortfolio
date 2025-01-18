@@ -18,6 +18,30 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.SWEIcons{
+  color: #63E6FA;
+  transition: 0.5s;
+  margin: 5px;
+}
+
+.SWEIcons:hover{
+  cursor: pointer;
+  color: rgba(4,189,218,1);
+  transition: 0.5s;
+}
+
+.MEIcons{
+  color: #FD76FD;
+  transition: 0.5s;
+  margin: 5px;
+}
+
+.MEIcons:hover{
+  cursor: pointer;
+  color: #D900D9;
+  transition: 0.5s;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

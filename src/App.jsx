@@ -10,6 +10,7 @@ import AdobeIll from './IMGs/ADOBEILLLogo.png';
 import AdobePh from './IMGs/ADOBEPHLogo.png';
 import AdobePr from './IMGs/ADOBEPRLogo.png';
 import CapCut from './IMGs/CAPCUTLogo.png';
+import Canva from './IMGs/CANVALogo.png';
 import Js from './IMGs/JSLogo.png';
 import Htmll from './IMGs/HTMLLogo.png';
 import Css from './IMGs/CSSLogo.png';
@@ -18,6 +19,10 @@ import Java from './IMGs/JAVALogo.png';
 import Python from './IMGs/PYTHONLogo.png';
 import Sql from './IMGs/SQLLogo.png';
 import Php from './IMGs/PHPLogo.png';
+import { FaXTwitter, FaInstagram,  } from "react-icons/fa6";
+import { IoMail } from "react-icons/io5";
+
+
 
 const Header = styled.div`
   display: flex;
@@ -292,6 +297,35 @@ const ProjectCard = styled.button`
   }
 `;
 
+const Footer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  font-size: 25px;
+`;
+
+const FooterIconCont = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+const FooterInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  color: #F5F5F5;
+  font-size: 10px;
+  margin: 0px;
+`;
+
 
 
 function App() {
@@ -338,16 +372,16 @@ function App() {
       alert('Project in construction');
     }
     else if(projectName == 'LifeStyle Instagram'){
-      alert('LifeStyle IG Project');
+      window.open('https://www.instagram.com/caosoriopaez_', '_blank');
     }
     else if(projectName == 'Youtube'){
-      alert('Youtube Project');
+      window.open('https://www.youtube.com/@Jes%C3%BAsATrav%C3%A9sdelLente', '_blank');
     }
     else if(projectName == 'Developer Instagram'){
-      alert('Developer IG Project');
+      window.open('https://www.instagram.com/caopdecode', '_blank');
     }
     else if(projectName == 'Designs'){
-      alert('Designs Project');
+      window.open('https://www.behance.net/caopdecode', '_blank');
     }
   };
 
@@ -370,6 +404,10 @@ function App() {
     { id: 2, img: `${AdobePh}` },
     { id: 3, img: `${AdobeIll}` },
     { id: 4, img: `${CapCut}` }
+  ];
+
+  const skillsMEArr2 = [
+    { id: 1, img: `${Canva}` }
   ];
 
   const projectsArr = [
@@ -539,6 +577,13 @@ function App() {
                   </SkillCard>
                 ))}
               </SkillsSec>
+              <SkillsSec>
+                {skillsMEArr2.map((skill) => (
+                    <SkillCard key={skill.id}>
+                    <SkillImg $bg={skill.img} />
+                  </SkillCard>
+                ))}
+              </SkillsSec>
             </SkillsDivider>
             </>
           )}
@@ -557,6 +602,26 @@ function App() {
         </InfoContME>
         )}
       </InfoBackgr>
+      <Footer>
+        <FooterIconCont>
+        {!checked?(
+          <>
+          <FaInstagram className='SWEIcons'/>
+          <FaXTwitter className='SWEIcons'/>
+          <IoMail className='SWEIcons'/>
+          </>
+        ):(
+          <>
+          <FaInstagram className='MEIcons'/>
+          <FaXTwitter className='MEIcons'/>
+          <IoMail className='MEIcons'/>
+          </>
+        )}
+        </FooterIconCont>
+        <FooterInfo>
+          <p style={{margin: '0px'}}>©COPYRIGHT 2025 CAOPDECODE ALL RIGHTS RESERVED</p>
+        </FooterInfo>
+      </Footer>
     </>
   )
 }
