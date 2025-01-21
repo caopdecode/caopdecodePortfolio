@@ -36,10 +36,12 @@ const Header = styled.div`
 
 const LogoHeader = styled.h3`
   color: #63E6FA;
+  transition: 0.5s;
 `;
 
 const LogoHeaderME = styled.h3`
   color: #FD76FD;
+  transition: 0.5s;
 `;
 
 const InfoBackgr = styled.div`
@@ -52,6 +54,11 @@ const InfoBackgr = styled.div`
   height: 75%;
   border-radius: 50px;
   box-shadow: -19px 20px 10px 1px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    height: 85%;
+    flex-direction: column;
+  }
 `;
 
 const InfoCont = styled.div`
@@ -64,6 +71,11 @@ const InfoCont = styled.div`
   width: 75%;
   height: 100%;
   border-radius: 50px;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const InfoContME = styled.div`
@@ -76,11 +88,19 @@ const InfoContME = styled.div`
   width: 75%;
   height: 100%;
   border-radius: 50px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const SectionsTitle = styled.h2`
   color: #F5F5F5;
   margin: 0px;
+   @media (max-width: 768px) {
+    margin-top: 10px;
+  }
 `;
 
 const CardsContainer = styled.div`
@@ -90,6 +110,26 @@ const CardsContainer = styled.div`
   align-items: center;
   width:25%;
   height: 100%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 25%;
+  }
+`;
+
+const CardsContainerCont = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    width: 100%;
+    height: 25%;
+  }
 `;
 
 const Card = styled.button`
@@ -107,6 +147,11 @@ const Card = styled.button`
   &:hover{
     background-color: rgba(4,189,218,1);
     transition: 0.5s;
+  }
+
+  @media (max-width: 768px) {
+    width: 25%;
+    height: 70%;
   }
 `;
 
@@ -126,6 +171,11 @@ const CardME = styled.button`
     background-color: #D900D9;
     transition: 0.5s;
   }
+
+   @media (max-width: 768px) {
+    width: 25%;
+    height: 70%;
+  }
 `;
 
 const SWETitle = styled.h1`
@@ -134,12 +184,20 @@ const SWETitle = styled.h1`
   font-style: italic;
   margin: 0px;
   margin-top: 30px;
+
+  @media (max-width: 768px) {
+    font-size: 1.5em;
+  }
 `;
 
 const ProfileTitle = styled.h2`
   color: #171717;
   font-style: italic;
   margin: 0px;
+  
+  @media (max-width: 768px) {
+    font-size: 1em;
+  }
 `;
 
 const METitle = styled.h1`
@@ -148,12 +206,20 @@ const METitle = styled.h1`
   font-style: italic;
   margin: 0px;
   margin-top: 30px;
+
+  @media (max-width: 768px) {
+    font-size: 1.5em;
+  }
 `;
 
 const ProfileMETitle = styled.h2`
   color: #F5F5F5;
   font-style: italic;
   margin: 0px;
+
+  @media (max-width: 768px) {
+    font-size: 1em;
+  }
 `;
 
 const SWEInfo = styled.div`
@@ -164,6 +230,10 @@ const SWEInfo = styled.div`
   width: 90%;
   height: 70%;
   margin-top: 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const SWETextCont = styled.div`
@@ -174,6 +244,11 @@ const SWETextCont = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 25px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const SWEPicCont = styled.div`
@@ -187,6 +262,10 @@ const SWEPicCont = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 25px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const MEPicCont = styled.div`
@@ -200,6 +279,10 @@ const MEPicCont = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 25px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const SWETextInfo = styled.p`
@@ -207,6 +290,10 @@ const SWETextInfo = styled.p`
   width: 90%;
   height: 90%;
   color: #171717;
+
+  @media (max-width: 768px) {
+    font-size: 0.61em;
+  }
 `;
 
 const CardText = styled.h2`
@@ -214,6 +301,10 @@ const CardText = styled.h2`
   font-size: 35px;
   cursor: pointer;
   font-weight: 300;
+
+  @media (max-width: 768px) {
+    font-size: 1em;
+  }
 `;
 
 const MECardText = styled.h2`
@@ -221,6 +312,10 @@ const MECardText = styled.h2`
   font-size: 35px;
   cursor: pointer;
   font-weight: 300;
+
+  @media (max-width: 768px) {
+    font-size: 1em;
+  }
 `;
 
 const SkillCard = styled.div`
@@ -236,6 +331,11 @@ const SkillCard = styled.div`
     translate: 0px -10px;
     box-shadow: 0px 20px 10px 1px rgba(0, 0, 0, 0.2);
     transition: 0.5s;
+  }
+  
+  @media (max-width: 768px) {
+    widht: 20%;
+    height: 65%;
   }
 `;
 
@@ -276,6 +376,9 @@ const ProjectsCont = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const ProjectCard = styled.button`
@@ -285,7 +388,7 @@ const ProjectCard = styled.button`
   width: 20%;
   height: 90%;
   background-color: #171717;
-  color: ${(props) => props.textColor || 'black'};
+  color: ${(props) => props.$textColor || 'black'};
   border-radius: 25px;
   border: none;
   transition: 0.5s;
@@ -295,6 +398,12 @@ const ProjectCard = styled.button`
     translate: 0px -10px;
     box-shadow: 0px 20px 10px 1px rgba(0, 0, 0, 0.2);
     transition: 0.5s;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    height: 20%;
+    font-size: 0.6em;
   }
 `;
 
@@ -437,9 +546,9 @@ function App() {
     <>
       <Header>
         {!checked ? (
-        <LogoHeader>CAOP_Decode</LogoHeader>
+        <LogoHeader className='headerSWE'>CAOP_Decode</LogoHeader>
       ):(
-        <LogoHeaderME>CAOP_Decode</LogoHeaderME>
+        <LogoHeaderME className='headerME'>CAOP_Decode</LogoHeaderME>
       )}
         <Switch
         onChange={handleToggleCheck}
@@ -478,23 +587,24 @@ function App() {
       />
       </Header>
       <InfoBackgr>
-      
         <CardsContainer>
         <motion.div
+            key={checked ? 'checked' : 'unchecked'}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            style={{width: '100%', height: '85%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', margin: '0px'}}
+            className='containerMotion'
             transition={{
                 duration: 0.8,
                 delay: 0.2,
                 ease: [0, 0.71, 0.2, 1.01],
             }}
             >
-          <SectionsTitle>
+         <SectionsTitle>
             Sections
-          </SectionsTitle>
+        </SectionsTitle>
           {!checked ?(
             <>  
+            <CardsContainerCont>
               <Card onClick={handleAbout}>
                 <CardText>About</CardText>
               </Card>
@@ -504,10 +614,11 @@ function App() {
               <Card onClick={handleProjects}>
                 <CardText>Projects</CardText>
               </Card>
+              </CardsContainerCont>
             </>
           ):(
             <>
-            
+            <CardsContainerCont>
             <CardME onClick={handleAbout}>
               <MECardText>About</MECardText>
             </CardME>
@@ -517,12 +628,24 @@ function App() {
             <CardME onClick={handleProjects}>
               <MECardText>Projects</MECardText>
             </CardME>
+            </CardsContainerCont>
           </>
           )}
           </motion.div>
         </CardsContainer>
         {!checked ? (
         <InfoCont>
+          <motion.div
+            key={`${checked}-${about}-${skills}-${projects}`}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            style={{width: '100%', height: '95%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', margin: '0px'}}
+            transition={{
+                duration: 0.8,
+                delay: 0.2,
+                ease: [0, 0.71, 0.2, 1.01],
+            }}
+            >
           <SWETitle>SOFTWARE ENGINEER</SWETitle>
           <ProfileTitle>Profile</ProfileTitle>
           <SWEInfo>
@@ -562,7 +685,7 @@ function App() {
             <>
               <ProjectsCont>
               {projectsArr.map((project) => (
-                  <ProjectCard key={project.name} $colorBg={project.colorBg} textColor={'#63E6FA'} onClick={ () => handleProjectsBtn(project.name)}>
+                  <ProjectCard key={project.name} $colorBg={project.colorBg} $textColor={'#63E6FA'} onClick={ () => handleProjectsBtn(project.name)}>
                     <h2>{project.name}</h2>
                   </ProjectCard>
                 ))}
@@ -570,9 +693,21 @@ function App() {
             </>
           )}
           </SWEInfo>
+          </motion.div>
         </InfoCont>
         ):(
           <InfoContME>
+            <motion.div
+            key={`${checked}-${about}-${skills}-${projects}`}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            style={{width: '100%', height: '95%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', margin: '0px'}}
+            transition={{
+                duration: 0.8,
+                delay: 0.2,
+                ease: [0, 0.71, 0.2, 1.01],
+            }}
+            >
           <METitle>MULTIMEDIA ENGINEER</METitle>
           <ProfileMETitle>Profile</ProfileMETitle>
           <SWEInfo>
@@ -612,7 +747,7 @@ function App() {
             <>
               <ProjectsCont>
               {MEprojectsArr.map((project) => (
-                  <ProjectCard key={project.name} $colorBg={project.colorBg} textColor={'#FD76FD'} onClick={ () => handleProjectsBtn(project.name)}>
+                  <ProjectCard key={project.name} $colorBg={project.colorBg} $textColor={'#FD76FD'} onClick={ () => handleProjectsBtn(project.name)}>
                     <h2>{project.name}</h2>
                   </ProjectCard>
                 ))}
@@ -620,6 +755,7 @@ function App() {
             </>
           )}
           </SWEInfo>
+          </motion.div>
         </InfoContME>
         )}
       </InfoBackgr>
