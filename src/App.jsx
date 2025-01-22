@@ -472,8 +472,8 @@ function App() {
     if(projectName == 'XlComp'){
       window.open('https://xlcomp.vercel.app/', '_blank');
     }
-    else if(projectName == 'Project2'){
-      alert('Project in construction');
+    else if(projectName == 'Student DB System'){
+      window.open('https://github.com/caopdecode/StudentSystemProject', '_blank');
     }
     else if(projectName == 'Project3'){
       alert('Project in construction');
@@ -522,7 +522,7 @@ function App() {
 
   const projectsArr = [
     { name: 'XlComp', colorBg: 'green' },
-    { name: 'Project2', colorBg: 'darkgrey' },
+    { name: 'Student DB System', colorBg: 'darkgrey' },
     { name: 'Project3', colorBg: 'darkgrey' },
     { name: 'Project4', colorBg: 'darkgrey' }
   ];
