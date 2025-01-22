@@ -470,7 +470,7 @@ function App() {
 
   const handleProjectsBtn = (projectName) =>{
     if(projectName == 'XlComp'){
-      window.open('https://xlcomp.vercel.app/', '_blank');
+      window.open('https://github.com/caopdecode/xlCompFrontend', '_blank');
     }
     else if(projectName == 'Student DB System'){
       window.open('https://github.com/caopdecode/StudentSystemProject', '_blank');
@@ -522,7 +522,7 @@ function App() {
 
   const projectsArr = [
     { name: 'XlComp', colorBg: 'green' },
-    { name: 'Student DB System', colorBg: 'darkgrey' },
+    { name: 'Student DB System', colorBg: 'gold' },
     { name: 'Project3', colorBg: 'darkgrey' },
     { name: 'Project4', colorBg: 'darkgrey' }
   ];
