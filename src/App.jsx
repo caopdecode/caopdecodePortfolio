@@ -470,7 +470,7 @@ function App() {
 
   const handleProjectsBtn = (projectName) =>{
     if(projectName == 'XlComp'){
-      alert('XlComp Project');
+      window.open('https://xlcomp.vercel.app/', '_blank');
     }
     else if(projectName == 'Project2'){
       alert('Project in construction');
